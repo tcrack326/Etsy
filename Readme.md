@@ -1,3 +1,3 @@
-## Yo, I'm a Readme
+## Etsy re-creation Assignment
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+This is the re-creation of the Etsy site assignment.
