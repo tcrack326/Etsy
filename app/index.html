@@ -23,11 +23,80 @@
   </head>
   <body>
     <header>
+      <div class="headContainer">
+        <h1>Etsy</h1>
+        <input type="search" value="husky"/>
+        <input type="submit" value="Search"/>
+        <input type="submit" value="Browse"/>
+        <a href="#">Register</a><a href="#">Log in</a><a href="#">Cart</a>
+      </div>
     </header>
     <section class="main">
-      <div class='sidebar'>
+      <div class='side'>
+        <span>Show results for:</span>
+        <div class="sidebar">
+          <section class="itemType">
+            <h3>Item Type</h3>
+            <ul>
+              <li><input type="radio" name="itemType" value="All Items">All Items</li>
+              <li><input type="radio" name="itemType" value="Handmade">Handmade</li>
+              <li><input type="radio" name="itemType" value="Vintage">Vintage</li>
+              <li><input type="radio" name="itemType" value="Craft Supplies">Craft Supplies</li>
+            </ul>
+          </section>
+          <section class="categories">
+            <h3>Categories</h3>
+            <ul>
+              <li>
+                Handmade
+              </li>
+              <li>Jewelry</li>
+              <li>Art</li>
+              <li>Accessories</li>
+              <li>Pets</li>
+              <li>Clothing</li>
+              <li>Housewares</li>
+              <li>Everything Else</li>
+              <li>Paper Goods</li>
+              <li>Vintage</li>
+              <li>Clothing</li>
+              <li>Toy</li>
+              <li>Collectibles</li>
+              <li>Home Decor</li>
+              <li>Craft Supplies</li>
+              <li>Fabric</li>
+              <li>Commercial</li>
+              <li>Handmade</li>
+              <li>Scrapbooking</li>
+            </ul>
+          </section>
+          <section class="priceFilter">
+            <input type="text" placeholder="$min"/>
+            <input type="text" placeholder="$max"/>
+          </section>
+          <section class="filterByColor">
+            <h3>Filter by Color</h3>
+            <input type="color"/>
+          </section>
+          <section class="orderingOptions">
+            <h3>Ordering Options</h3>
+            <input type="checkbox" value="Accepts Etsy Gift Cards">Accepts Etsy Gift Cards</input>
+            <input type="checkbox" value="Customizable">Customizable</input>
+          </section>
+          <section class="shopLocation">
+            <h3>Shop Location</h3>
+            <input type="checkbox" value="Anywhere">Anywhere</input>
+            <input type="checkbox" value="United States">United States</input>
+          </section>
+          <section class="shipsTo">
+            <input type="text" value="United States"/>
+          </section>
+
+        </div>
       </div>
       <div class="productContainer">
+        <!-- adding text placeholders for search itme,count, and sort by variables until later -->
+        <span class="searchResult"><b>"husky"</b> We found 4,925 items</span><span class="sortBy">Sort by: Relevancy</span>
         <ul id="productList"></ul>
       </div>
     </section>

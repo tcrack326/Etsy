@@ -9,6 +9,7 @@ $borderColor:HSLA(0, 0%, 93%, 1);
 $green:HSLA(94, 50%, 51%, 1);
 $font:"Arial","Helvetica",sans-serif;
 $fontColor:HSLA(0, 0%, 40%, 1);
+$etsyColor:HSLA(17, 68%, 49%, 1);
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -16,36 +17,80 @@ body {
 background-color:$backColor;
 }
 
+header {
+  height:80px;
+  background-color:white;
+  
+  .headContainer {
+    @include span-columns(12);
+  }
+  h1 {
+    font-family:Times New Roman;
+    float:left;
+    font-size:45px;
+    color:$etsyColor;
+  }
+
+}
+
 .main {
   background-color:$backColor;
   @include outer-container;
+  padding:25px;
 }
+
 
  .productContainer {
-   @include outer-container;
+  @include outer-container;
   @include span-columns(9);
+  @include omega();
   overflow:auto;
+  position:relative;
   background-color:$backColor;
+
+  span.searchResult {
+    display:inline-block;
+    font-size: 12px;
+    padding: 12px;
+  }
+
+  span.sortBy {
+    float:right;
+    font-size: 12px;
+    padding: 12px;
+  }
+
 }
 
-.sidebar {
-  @include span-columns(2.5);
-  float:left;
-  height:1000px;
-  background-color:white;
+.side {
+
+  @include span-columns(2.75);
+  height: 1000px;
+
+  span {
+    display:inline-block;
+    font-size: 12px;
+    margin: 12px;
+  }
+
+  .sidebar {
+    background-color:white;
+    height:100%;
+  }
 }
 
 ul {
   overflow: auto;
   padding:0;
+  margin:0;
 }
 
 #productList li {
-  @include span-columns(3.5);
+  @include span-columns(3.75);
   @include omega(3n);
   overflow:auto;
-  float:left;
-  margin:10px;
+  position:relative;
+  margin:0px 14.5px 25px 10px;
   padding:4px;
   background-color:white;
   border:1px solid $borderColor;
@@ -98,4 +143,43 @@ ul {
   bottom:4px;
   right:1px;
   color:$green;
+}
+
+.heart {
+  position:absolute;
+  z-index: 3;
+  top:8px;
+  right:38px;
+
+
+  img {
+    border:1px solid gray;
+    background-color:white;
+    width:25px;
+    height:25px;
+    padding:4px;
+    border-radius:4px;
+  }
+}
+
+.hamburger {
+  position:absolute;
+  z-index: 3;
+  top: 8px;
+  right: 8px;
+
+
+  img {
+    border:1px solid gray;
+    background-color:white;
+    width:25px;
+    height:25px;
+    padding:4px;
+    border-radius:4px;
+
+  }
+}
+
+footer {
+  height: 220px;
 }

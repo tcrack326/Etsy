@@ -1,4 +1,4 @@
-$(document.ready)
+$(document).ready(function(){
 
 
 //Prepare variables for the product list and container
@@ -14,6 +14,7 @@ productArray.forEach(function(product){
   var price = product.price;
   var currency = product.currency_code;
   var shop = product.Shop.shop_name;
+  var productPath = product.url;
 
   // Build Image Tag for Each Product
   imageTag = "<img class='image' src='" + image + "' />";
@@ -33,8 +34,35 @@ productArray.forEach(function(product){
 
 
   // Build Each Product Display
-  productDisplay = "<li>" + "<div class='productBox'>" + imageTag + "<div class='productInfo'>" + titleTag + shopTag + priceTag + currencyTag + "</div></div></li>";
+  productDisplay = "<li><a href='" + productPath + "'><div class='productBox'>" + imageTag + "<div class='productInfo'>" + titleTag + shopTag + priceTag + currencyTag + "</div></div></a></li>";
 
   // Append Each Product To my Products List
   container.append(productDisplay);
+});
+
+//Add hover functionality with jQuery
+var productItem = $('#productList li');
+
+
+productItem.on({
+
+  mouseenter: function () {
+        //stuff to do on mouse enter
+        var heartTag = "<a href='http://google.com' class='heart'><img src='../images/heart.png'></a>";
+
+        var hamburgerTag = "<a href='http://google.com' class='hamburger'><img src='../images/hamburger.png'></a>";
+
+      $(this).append(heartTag);
+      $(this).append(hamburgerTag);
+
+    },
+    mouseleave: function () {
+        //stuff to do on mouse leave
+  $('.heart').remove();
+  $('.hamburger').remove();
+    }
+
+
+});
+
 });
